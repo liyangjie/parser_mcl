@@ -3,7 +3,7 @@ import re,csv
 import os 
 r_strain = r = re.compile(r'\(.*\)')
 f = open('label.tab','r')
-# headline = f.readline()
+
 label = [x.strip() for x in f]
 def main():
 	data_set = read_MCL("all_prot.end")
