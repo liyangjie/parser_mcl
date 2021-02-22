@@ -1,15 +1,20 @@
 # -*- coding:utf-8 -*-
 import re,csv
-import os 
+import os
+import sys
+input_file = sys.argv[1]
+label_file = sys.argv[2]
+
 r_strain = r = re.compile(r'\(.*\)')
-f = open('label.tab','r')
+f = open(label_file,'r')
+
 label = [x.strip() for x in f]
 def main():
-	data_set = read_MCL("all_prot.end")
-	saveData("pan_genome.csv",data_set)
+	data_set = read_MCL(input_file)
+	saveData("gene_presence_absence.csv",data_set)
 
 def read_MCL(mcl_file):
-	data_set = []	
+	data_set = []
 	f = open(mcl_file,'r')
 	for line in f:
 		data = ['' for x in range(len(label)+3)]  #菌株数+3
