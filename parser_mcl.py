@@ -17,7 +17,7 @@ def read_MCL(mcl_file):
 	data_set = []
 	f = open(mcl_file,'r')
 	for line in f:
-		data = ['' for x in range(len(label)+3)]  #菌株数+3
+		data = ['' for x in range(len(label)+3)]
 		line= line.strip()
 		line_ls = line.split('\t')
 		family_info =line_ls[0]
